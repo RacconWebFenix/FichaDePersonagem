@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../static/style.css" />
+
+    <title>CRUD em Python</title>
+  </head>
+  <body>
+    {% include 'header.html' %}
+    <div class="bloco">
+      <h2>Visualizar todos os Registros</h2>
+    </div>
+    <div class="bloco">
+      <table class="tabela">
+        <tr class="tabelaHeader">
+          <td>ID</td>
+          <td>Nome</td>
+          <td>Classe</td>
+          <td>Força</td>
+          <td>Destreza</td>
+          <td>Constituição</td>
+          <td>Sabedoria</td>
+          <td>Inteligência</td>
+          <td>Ações</td>
+        </tr>
+        {% for registro in registros %}
+        <tr>
+          <td>{{registro.id}}</td>
+          <td>{{registro.nome}}</td>
+          <td>{{registro.classe}}</td>
+          <td>{{registro.forca}}</td>
+          <td>{{registro.destreza}}</td>
+          <td>{{registro.constituicao}}</td>
+          <td>{{registro.sabedoria}}</td>
+          <td>{{registro.inteligencia}}</td>
+          <td><a href="/read/{{registro.id}}" class="botao">Visualizar Ficha do Personagem</a></td>
+        </tr>
+        {% endfor %}
+      </table>
+    </div>
+  </body>
+</html>

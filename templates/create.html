@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../static/style.css" />
+    <title>Ficha de Personagem</title>
+  </head>
+  <body>
+    {% include 'header.html' %}
+    <div class="bloco">
+      <h2>Criar Registros</h2>
+    </div>
+    {% if idAtribuido %}
+    <div class="bloco">
+      <p>
+        Registro Criado com sucesso! <br />
+        <br />
+        O ID atribuído foi <span class="id_atribuido">{{idAtribuido}}</span>.
+        <br />
+        <br />
+        <a href="/read/{{idAtribuido}}" class="botao"
+          >Visualizar esse registro.</a
+        >
+      </p>
+    </div>
+    {% else %}
+    <div class="bloco">
+      <form class="form" method="POST" >
+        <div class="bloco form_input">
+          <label for="nome">Nome: </label>
+          <input type="text" name="nome" id="nome" />
+        </div>
+        <div class="bloco form_input">
+          <label for="classe"
+            >Escolha Uma Classe:
+            <div class="ls-custom-select">
+              <select name="classeEscolha" id="pjclass">
+                <option value="0"></option>
+                <option value="1">Caçadora</option>
+                <option value="2">Draconiano</option>
+                <option value="3">Elfo</option>
+                <option value="4">Barbaro</option>
+                <option value="5">Mago</option>
+              </select>
+              <input type="text" name="classe" id="classeEscolha" value="" hidden>
+            </div>
+            <span
+              ><img
+                src="../static/img/0.jpg"
+                width="200px"
+                alt="Imagem da Classe"
+                id="imagem"
+              />
+            <input type="text" name="imagem" id="imagemCampo" value="" hidden>
+            </span>
+          </label>
+        </div>
+        <div class="bloco form_input">
+          <label for="teste">Força</label>
+          <input
+            type="range"
+            name="forca"
+            id="rangeForca"
+            min="1"
+            max="50"
+            value="1"
+          />
+          <span id="mudarValorForca">1</span>
+        </div>
+        <div class="bloco form_input">
+          <label for="teste">Destreza</label>
+          <input
+            type="range"
+            name="destreza"
+            id="rangeDestreza"
+            min="1"
+            max="50"
+            value="1"
+          />
+          <span id="mudarValorDestreza">1</span>
+        </div>
+        <div class="bloco form_input">
+          <label for="teste">Constituição</label>
+          <input
+            type="range"
+            name="constituicao"
+            id="rangeConstituicao"
+            min="1"
+            max="50"
+            value="1"
+          />
+          <span id="mudarValorConstituicao">1</span>
+        </div>
+        <div class="bloco form_input">
+          <label for="teste">Sabedoria</label>
+          <input
+            type="range"
+            name="sabedoria"
+            id="rangeSabedoria"
+            min="1"
+            max="50"
+            value="1"
+          />
+          <span id="mudarValorSabedoria">1</span>
+        </div>
+
+        <div class="bloco form_input">
+          <label for="teste">Inteligência</label>
+          <input
+            type="range"
+            name="inteligencia"
+            id="rangeInteligencia"
+            min="1"
+            max="50"
+            value="1"
+          />
+          <span id="mudarValorInteligencia">1</span>
+        </div>
+        <div class="bloco form_input">
+          <textarea type="text" name="bio" id="bio"> </textarea>
+        </div>
+
+        <div class="bloco form_input">
+          <input type="submit" class="botao" value="Enviar" />
+        </div>
+      </form>
+    </div>
+
+    {% endif %}
+
+    <script src="../static/script.js"></script>
+  </body>
+</html>
