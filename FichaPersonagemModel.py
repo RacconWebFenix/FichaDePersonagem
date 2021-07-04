@@ -2,6 +2,7 @@ from flask_sqlalchemy import SQLAlchemy
 
 db = SQLAlchemy()
 
+
 #Quando Fdiferenciamos Maiusculas o sqlalchemy adota uma sintaxe separando as palavras com _ exemplo FichaPersonagem passa a ser em tempo de execução ficha_personagem
 class FichaPersonagem(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -15,7 +16,8 @@ class FichaPersonagem(db.Model):
     inteligencia = db.Column(db.Integer, nullable=False)
     bio = db.Column(db.Text, nullable=False)
 
-    def __init__(self, nome, classe, imagem, forca, destreza, constituicao, sabedoria, inteligencia, bio):
+    def __init__(self, nome, classe, imagem, forca, destreza, constituicao,
+                 sabedoria, inteligencia, bio):
         self.nome = nome
         self.classe = classe
         self.imagem = imagem
@@ -39,3 +41,15 @@ class FichaPersonagem(db.Model):
     def save(self):
         db.session.add(self)
         db.session.commit()
+
+    def update(self, newData):
+        self.nome = newData.nome
+        self.classe = newData.classe
+        self.imagem = newData.imagem
+        self.forca = newData.forca
+        self.destreza = newData.destreza
+        self.constituicao = newData.constituicao
+        self.sabedoria = newData.sabedoria
+        self.inteligencia = newData.inteligencia
+        self.bio = newData.bio
+        self.save()

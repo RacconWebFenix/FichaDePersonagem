@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../static/fichaCompleta.css" />
+    <link rel="stylesheet" href="../static/style.css" />
+    <title>Ficha de Personagem - Update</title>
+  </head>
+  <body>
+    {% include 'header.html' %} {% if sucesso %}
+
+    <div class="bloco sucesso">
+      <p>Dados alterados com sucesso</p>
+    </div>
+    {% endif %}
+
+    <div class="bloco">
+      <h2>Editar dados do Personagem</h2>
+    </div>
+    <div class="bloco">
+      <form class="form" method="POST">
+        <div class="bloco form_input">
+          <label for="nome">Nome: </label>
+          <input type="text" name="nome" id="nome" value="{{registro.nome}}" />
+        </div>
+        <div class="bloco form_input">
+          <label for="classe"
+            >Escolha Uma Classe:
+            <div class="ls-custom-select">
+              <select name="classeEscolha" id="pjclass" value="">
+                <option value="0">{{registro.classe}}</option>
+                <option value="1">Caçadora</option>
+                <option value="2">Draconiano</option>
+                <option value="3">Elfo</option>
+                <option value="4">Barbaro</option>
+                <option value="5">Mago</option>
+              </select>
+              <input
+                type="text"
+                name="classe"
+                id="classeEscolha"
+                value="{{registro.classe}}"
+              hidden
+              />
+            </div>
+            <span
+              ><img
+                src="{{registro.imagem}}"
+                width="200px"
+                alt="Imagem da Classe"
+                id="imagem"
+              />
+              <input
+                type="text"
+                name="imagem"
+                id="imagemCampo"
+                value="{{registro.imagem}}"
+                hidden
+              />
+            </span>
+          </label>
+        </div>
+        <div class="bloco form_input">
+          <label for="teste">Força</label>
+          <input
+            type="range"
+            name="forca"
+            id="rangeForca"
+            min="1"
+            max="50"
+            value="{{registro.forca}}"
+          />
+          <span id="mudarValorForca">{{registro.forca}}</span>
+        </div>
+        <div class="bloco form_input">
+          <label for="teste">Destreza</label>
+          <input
+            type="range"
+            name="destreza"
+            id="rangeDestreza"
+            min="1"
+            max="50"
+            value="{{registro.destreza}}"
+          />
+          <span id="mudarValorDestreza">{{registro.destreza}}</span>
+        </div>
+        <div class="bloco form_input">
+          <label for="teste">Constituição</label>
+          <input
+            type="range"
+            name="constituicao"
+            id="rangeConstituicao"
+            min="1"
+            max="50"
+            value="{{registro.constituicao}}"
+          />
+          <span id="mudarValorConstituicao">{{registro.constituicao}}</span>
+        </div>
+        <div class="bloco form_input">
+          <label for="teste">Sabedoria</label>
+          <input
+            type="range"
+            name="sabedoria"
+            id="rangeSabedoria"
+            min="1"
+            max="50"
+            value="{{registro.sabedoria}}"
+          />
+          <span id="mudarValorSabedoria">{{registro.sabedoria}}</span>
+        </div>
+
+        <div class="bloco form_input">
+          <label for="teste">Inteligência</label>
+          <input
+            type="range"
+            name="inteligencia"
+            id="rangeInteligencia"
+            min="1"
+            max="50"
+            value="{{registro.inteligencia}}"
+          />
+          <span id="mudarValorInteligencia">{{registro.inteligencia}}</span>
+        </div>
+        <div class="bloco form_input">
+          <textarea type="text" name="bio" id="bio">{{registro.bio}}</textarea>
+        </div>
+
+        <div class="bloco form_input">
+          <input type="submit" class="botao" value="Enviar" />
+        </div>
+      </form>
+    </div>
+    <script src="../static/script.js"></script>
+  </body>
+</html>
