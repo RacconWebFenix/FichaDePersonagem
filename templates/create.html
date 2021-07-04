@@ -28,6 +28,9 @@
     {% else %}
     <div class="bloco">
       <form class="form" method="POST" >
+        <div class="bloco">
+          <p><h2>Voce possui <span id="pontos" onchange="mudarPonto()">150</span> para distribuir em seus atributos</h2></p>
+        </div>
         <div class="bloco form_input">
           <label for="nome">Nome: </label>
           <input type="text" name="nome" id="nome" />
@@ -66,6 +69,7 @@
             min="1"
             max="50"
             value="1"
+            onchange="teste()"
           />
           <span id="mudarValorForca">1</span>
         </div>

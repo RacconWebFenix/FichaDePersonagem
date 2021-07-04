@@ -6,15 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../static/fichaCompleta.css" />
     <link rel="stylesheet" href="../static/style.css" />
+    <link rel="stylesheet" href="../static/pages/update.css" />
     <title>Ficha de Personagem - Update</title>
   </head>
   <body>
     {% include 'header.html' %} {% if sucesso %}
 
     <div class="bloco sucesso">
-      <p>Dados alterados com sucesso</p>
+      <p>A ficha do Personagem {{registro.nome}}  foi alterado com sucesso</p>
     </div>
-    {% endif %}
+    <div class="bloco">
+      <a href="/read/{{registro.id}}" class="botao"
+        >Visualizar esse registro.</a
+      >
+    </div>
+    {% else %}
 
     <div class="bloco">
       <h2>Editar dados do Personagem</h2>
@@ -42,7 +48,7 @@
                 name="classe"
                 id="classeEscolha"
                 value="{{registro.classe}}"
-              hidden
+                hidden
               />
             </div>
             <span
@@ -132,6 +138,7 @@
         </div>
       </form>
     </div>
+    {% endif %}
     <script src="../static/script.js"></script>
   </body>
 </html>

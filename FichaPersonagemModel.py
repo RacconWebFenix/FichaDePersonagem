@@ -53,3 +53,7 @@ class FichaPersonagem(db.Model):
         self.inteligencia = newData.inteligencia
         self.bio = newData.bio
         self.save()
+    
+    def delete(self):
+        db.session.delete(self)
+        db.session.commit()

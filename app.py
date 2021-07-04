@@ -71,5 +71,20 @@ def update(registroId):
     return render_template('update.html', registro=registro, sucesso=sucesso)
 
 
+# DELETE
+@app.route('/delete/<registroId>')
+def delete(registroId):
+    registro = personagem.FichaPersonagem.readSingle(registroId)
+    return render_template('delete.html', registro = registro)
+
+@app.route('/delete/<registroId>/confirmed')
+def deleteConfirmed(registroId):
+    sucesso = None
+    registro = personagem.FichaPersonagem.readSingle(registroId)
+    if registro:
+        registro.delete()
+        sucesso = True
+    return render_template('delete.html', registro = registro, registroId = registroId, sucesso = sucesso)
+
 if __name__ == '__main__':
     app.run(debug=True)

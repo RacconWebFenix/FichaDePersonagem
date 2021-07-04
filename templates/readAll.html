@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../static/style.css" />
-
+    <link rel="stylesheet" href="/static/pages/readAll.css" />
     <title>CRUD em Python</title>
   </head>
   <body>
@@ -36,7 +36,11 @@
           <td>{{registro.constituicao}}</td>
           <td>{{registro.sabedoria}}</td>
           <td>{{registro.inteligencia}}</td>
-          <td><a href="/read/{{registro.id}}" class="botao">Visualizar Ficha do Personagem</a></td>
+          <td>
+            <a href="/read/{{registro.id}}" class="botao">Visualizar</a>
+            <a href="/delete/{{registro.id}}" class="botao">Remover</a>
+            <a href="/update/{{registro.id}}" class="botao">Editar</a>
+          </td>
         </tr>
         {% endfor %}
       </table>

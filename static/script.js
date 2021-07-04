@@ -15,8 +15,10 @@ const mudarValorInteligencia = document.querySelector(
   "#mudarValorInteligencia"
 );
 const imagemCampo = document.querySelector("#imagemCampo");
-const classeEscolha = document.querySelector('#classeEscolha');
+const classeEscolha = document.querySelector("#classeEscolha");
+const pontosParaDistribuir = document.querySelector("#pontos");
 
+console.log(pontosParaDistribuir);
 
 selectClass.addEventListener("change", function () {
   let valor = selectClass.options[selectClass.selectedIndex].value;
@@ -28,7 +30,7 @@ selectClass.addEventListener("change", function () {
     console.log("Escolha uma classe 1");
   } else {
     console.log(valorText);
-    classeEscolha.value = valorText
+    classeEscolha.value = valorText;
     console.log(mudarImagem.getAttribute("src"));
     imagemCampo.value = mudarImagem.getAttribute("src");
   }
@@ -36,6 +38,7 @@ selectClass.addEventListener("change", function () {
 
 rangeForca.addEventListener("input", function () {
   mudarValorForca.textContent = this.value;
+ 
 });
 
 rangeDestreza.addEventListener("input", function () {
@@ -53,3 +56,11 @@ rangeSabedoria.addEventListener("input", function () {
 rangeInteligencia.addEventListener("input", function () {
   mudarValorInteligencia.textContent = this.value;
 });
+
+
+function teste() {
+  let pontos = pontosParaDistribuir.textContent;
+  let pontosInts = parseInt(pontos)
+  let pt = pontosInts - 1
+  console.log(--pt)
+}
