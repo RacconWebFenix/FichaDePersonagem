@@ -27,47 +27,50 @@
     </div>
     <div class="bloco">
       <form class="form" method="POST">
-        <div class="bloco form_input">
-          <label for="nome">Nome: </label>
-          <input type="text" name="nome" id="nome" value="{{registro.nome}}" />
-        </div>
-        <div class="bloco form_input">
-          <label for="classe"
-            >Escolha Uma Classe:
-            <div class="ls-custom-select">
-              <select name="classeEscolha" id="pjclass" value="">
-                <option value="0">{{registro.classe}}</option>
-                <option value="1">Caçadora</option>
-                <option value="2">Draconiano</option>
-                <option value="3">Elfo</option>
-                <option value="4">Barbaro</option>
-                <option value="5">Mago</option>
-              </select>
-              <input
-                type="text"
-                name="classe"
-                id="classeEscolha"
-                value="{{registro.classe}}"
-                hidden
-              />
-            </div>
-            <span
-              ><img
-                src="{{registro.imagem}}"
-                width="200px"
-                alt="Imagem da Classe"
-                id="imagem"
-              />
-              <input
-                type="text"
-                name="imagem"
-                id="imagemCampo"
-                value="{{registro.imagem}}"
-                hidden
-              />
-            </span>
-          </label>
-        </div>
+        <fieldset>
+
+          <div class="bloco form_input">
+            <label for="nome">Nome: </label>
+            <input type="text" name="nome" id="nome" value="{{registro.nome}}" />
+          </div>
+          <div class="bloco form_input">
+            <label for="classe"
+              >Escolha Uma Classe:
+              <div class="ls-custom-select">
+                <select name="classeEscolha" id="pjclass" value="">
+                  <option value="0">{{registro.classe}}</option>
+                  <option value="1">Caçadora</option>
+                  <option value="2">Draconiano</option>
+                  <option value="3">Elfo</option>
+                  <option value="4">Barbaro</option>
+                  <option value="5">Mago</option>
+                </select>
+                <input
+                  type="text"
+                  name="classe"
+                  id="classeEscolha"
+                  value="{{registro.classe}}"
+                  hidden
+                />
+              </div>
+              <span
+                ><img
+                  src="{{registro.imagem}}"
+                  width="200px"
+                  alt="Imagem da Classe"
+                  id="imagem"
+                />
+                <input
+                  type="text"
+                  name="imagem"
+                  id="imagemCampo"
+                  value="{{registro.imagem}}"
+                  hidden
+                />
+              </span>
+            </label>
+          </div>
+        </fieldset>
         <div class="bloco form_input">
           <label for="teste">Força</label>
           <input
