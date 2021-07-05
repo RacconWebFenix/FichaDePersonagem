@@ -18,12 +18,12 @@
 <body>
   {% include 'header.html' %} {% if sucesso %}
 
-  <div class="bloco sucesso">
-    <p>A ficha do Personagem {{registro.nome}} foi alterado com sucesso</p>
-  </div>
-  <div class="bloco">
-    <a href="/read/{{registro.id}}" class="botao">Visualizar</a>
-  </div>
+    <div class="bloco sucesso">
+      <p>A ficha do Personagem {{registro.nome}} foi alterado com sucesso</p>
+    </div>
+    <div class="bloco">
+      <a href="/read/{{registro.id}}" class="botao">Visualizar</a>
+    </div>
   {% else %}
 
   <div class="bloco">
@@ -65,7 +65,6 @@
               <div class="bloco">
                 <h2>Atributos</h2>
               </div>
-
 
               <label for="rangeForca" class="form-label">Força: </label>
               <span id="mudarValorForca">{{registro.forca}}</span>
