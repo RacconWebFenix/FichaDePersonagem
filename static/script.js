@@ -18,7 +18,8 @@ const imagemCampo = document.querySelector("#imagemCampo");
 const classeEscolha = document.querySelector("#classeEscolha");
 const pontosParaDistribuir = document.querySelector("#pontos");
 
-console.log(pontosParaDistribuir);
+
+
 
 selectClass.addEventListener("change", function () {
   let valor = selectClass.options[selectClass.selectedIndex].value;
@@ -36,9 +37,10 @@ selectClass.addEventListener("change", function () {
   }
 });
 
+
 rangeForca.addEventListener("input", function () {
   mudarValorForca.textContent = this.value;
- 
+   
 });
 
 rangeDestreza.addEventListener("input", function () {
@@ -58,9 +60,30 @@ rangeInteligencia.addEventListener("input", function () {
 });
 
 
-function teste() {
-  let pontos = pontosParaDistribuir.textContent;
-  let pontosInts = parseInt(pontos)
-  let pt = pontosInts - 1
-  console.log(--pt)
-}
+// function teste() {
+//   let pontos = pontosParaDistribuir.textContent;
+//   let pontosInts = parseInt(pontos)
+//   let pt = pontosInts - 1
+//   console.log(--pt)
+// }
+
+// // function calcular() {
+  
+
+
+//   var valor1 = 80;
+//   var valor2 = rangeForca.value;
+//   var valor3 = rangeDestreza.value;
+//   var result = valor2 + valor3
+//   var resul = valor1 - result;
+//   if(resul <= 0){
+//     rangeForca.setAttribute("max", valor1);
+//     rangeDestreza.setAttribute("max", valor1);
+//     mudarValorForca.textContent = valor1;
+//     mudarValorDestreza.textContent = valor1;
+//   }else{
+//     rangeForca.setAttribute("max", 50);
+//     rangeDestreza.setAttribute("max", 50);
+//   }
+//   pontosParaDistribuir.textContent = valor1;
+// }

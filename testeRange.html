@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function calcular() {
+        const range1 = document.querySelector('#tick')
+        const range2 = document.querySelector('#tick2')
+
+
+        var valor1 = 80;
+        var valor2 = parseInt(document.querySelector('#tick').value);
+        var valor3 = parseInt(document.querySelector('#tick2').value);
+        let ticks = valor3 + valor2
+        var resul = valor1 - ticks;
+        if(resul <= 0){
+            range1.setAttribute("disabled", "disabled");
+        }else{
+            range1.removeAttribute("disabled", "disabled");
+        }
+
+        document.getElementById('resul').innerHTML= resul
+     }
+    </script>
+
+ <h3>Multiplicar</h3>
+    <label for="valor">Digite o valor</label>
+    <div>
+       <input type="range" list="tick" min="1" max="50" id="tick" onchange="calcular()">
+       <input type="range" list="tick" min="1" max="50" id="tick2" onchange="calcular()">
+    </div>
+       <label for="resul">Resultado:</label> 
+    <div id ="resul"> </div></div>
+</body>
+</html>

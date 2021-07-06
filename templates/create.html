@@ -10,22 +10,22 @@
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="../static/style.css" />
     <title>Ficha de Personagem</title>
     <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-      crossorigin="anonymous"
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"
     ></script>
+    <link rel="stylesheet" href="/static/style.css" />
   </head>
 
   <body>
     {% include 'header.html' %}
     <div class="bloco">
-      <h2>Criar Registro</h2>
+      <h2 style="color: white;">Criar Registro</h2>
     </div>
     {% if idAtribuido %}
-    <div class="bloco">
+    <div class="bloco" style="color: white;">
       <p>
         Registro Criado com sucesso! <br />
         <br />
@@ -33,18 +33,18 @@
         <br />
         <br />
         <a href="/read/{{idAtribuido}}" class="botao"
-          >Visualizar esse registro.</a
+          >Visualizar Registro</a
         >
       </p>
     </div>
     {% else %}
     <div class="bloco">
       <form class="form" method="POST">
-        <!-- <div class="bloco">
+        <div class="bloco">
         <p>
-        <h2>Voce possui <span id="pontos" onchange="mudarPonto()">150</span> para distribuir em seus atributos</h2>
+        <h2>Voce possui <span id="pontos">150</span> para distribuir em seus atributos</h2>
         </p>
-      </div> -->
+      </div>
         <div class="campo">
           <div class="input-group mb-3">
             <span class="input-group-text" id="nomeLabel">Nome</span>
@@ -75,6 +75,10 @@
               <option value="3">Elfo</option>
               <option value="4">Barbaro</option>
               <option value="5">Mago</option>
+              <option value="6">Lycan</option>
+              <option value="7">Dracula</option>
+              <option value="8">Anjo</option>
+              <option value="9">Daemon</option>
             </select>
             <input
               type="text"
@@ -125,6 +129,7 @@
                   max="50"
                   value="1"
                   class="form-range"
+                 
                 />
 
                 <label for="rangeDestreza" class="form-label">Destreza: </label>
@@ -137,6 +142,7 @@
                   max="50"
                   value="1"
                   class="form-range"
+                 
                 />
 
                 <label for="rangeConstituicao" class="form-label"
@@ -151,6 +157,7 @@
                   max="50"
                   value="1"
                   class="form-range"
+                 
                 />
 
                 <label for="rangeSabedoria" class="form-label"
@@ -165,6 +172,7 @@
                   max="50"
                   value="1"
                   class="form-range"
+                 
                 />
 
                 <label for="rangeInteligencia" class="form-label"
@@ -179,6 +187,7 @@
                   max="50"
                   value="1"
                   class="form-range"
+                 
                 />
               </div>
             </div>
@@ -199,7 +208,7 @@
               </div>
             </div>
             <div class="bloco form_input">
-              <input type="submit" class="botao" value="Enviar" />
+              <input type="submit" class="botao" value="Enviar" id="botaoSubmit"/>
             </div>
           </div>
         </div>

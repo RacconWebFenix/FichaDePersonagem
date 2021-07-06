@@ -29,11 +29,18 @@ def readAll():
     closeConn = db.session.close_all()
     return render_template('readAll.html', registros=registros, closeConn = closeConn)
 
+@app.route('/read/buscar/<nome>')
+def buscaNome(nome):
+    registros = personagem.FichaPersonagem.buscaNome(nome)
+    closeConn = db.session.close_all()
+    return render_template('readAll.html', registros=registros, closeConn = closeConn)
+
 
 @app.route('/read/<idRegistro>')
 def readSingle(idRegistro):
     registro = personagem.FichaPersonagem.readSingle(idRegistro)
     closeConn = db.session.close_all()
+    print(registro.nome)
     return render_template('fichaCompleta.html', registro=registro, closeConn = closeConn)
 
 
@@ -75,7 +82,8 @@ def update(registroId):
 @app.route('/delete/<registroId>')
 def delete(registroId):
     registro = personagem.FichaPersonagem.readSingle(registroId)
-    return render_template('delete.html', registro = registro)
+    closeConn = db.session.close_all()
+    return render_template('delete.html', registro = registro, closeConn = closeConn)
 
 @app.route('/delete/<registroId>/confirmed')
 def deleteConfirmed(registroId):

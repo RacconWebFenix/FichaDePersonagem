@@ -38,6 +38,12 @@ class FichaPersonagem(db.Model):
         # Select * from filmes order by id desc
         return FichaPersonagem.query.get(idRegistro)
 
+    @staticmethod
+    def buscaNome(nome):
+        # Select * from filmes order by id desc
+        return FichaPersonagem.query.filter(FichaPersonagem.nome.like(f'%{nome}%'))
+
+
     def save(self):
         db.session.add(self)
         db.session.commit()
