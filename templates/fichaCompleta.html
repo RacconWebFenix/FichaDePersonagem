@@ -1,50 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="/static/style.css" />
-    <link rel="stylesheet" href="../static/fichaCompleta.css">
-    <title>Document</title>
-</head>
 
-<body>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/cbfa8c82e1.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Document</title>
+  </head>
+
+  <body>
     {% include 'header.html' %}
 
-    <div class="descricao">
-        <div class="personagem">
-            <h2>{{registro.nome}}</h2> <br>
-            <h2>{{registro.classe}}</h2>
-            <img src="{{registro.imagem}}" alt="Classe do personagem {{registro.classe}}" class="imagem" width="400" />
-        </div>
-
-        <div class="atributos">
-            <h2>Atributos do Personagem</h2>
-            <div class="atributos valores">
-                <p>
-                <h3>Força: {{registro.forca}}</h3>
-                </p>
-                <p>
-                <h3>Destreza: {{registro.destreza}}</h3>
-                </p>
-                <p>
-                <h3>Constituição: {{registro.constituicao}}</h3>
-                </p>
-                <p>
-                <h3>Sabedoria: {{registro.sabedoria}}</h3>
-                </p>
-                <p>
-                <h3>Inteligência: {{registro.inteligencia}}</h3>
-                </p>
+    <div class="container px-4">
+        <div class="row gx-5">
+          <div class="col">
+           <div class="p-3">
+            <div class="card align-items-center" id="col1">
+                <img
+                  src="{{registro.imagem}}"
+                  class="card-img-top"
+                  style="width: 400px"
+                  alt="Classe do personagem {{registro.classe}}"
+                />
+                <div class="card-body">
+                  <h2>{{registro.nome}}</h2>
+                  <hr />
+                  <p class="card-text">{{registro.bio}}</p>
+                </div>
+                <div class="card-footer">
+                  <span class="text-center"> <b>{{registro.classe}}</b></span>
+                </div>
+              </div>
+           </div>
+          </div>
+          <div class="col">
+            <div class="p-3">
+                <div class="card align-items-center" id="col1">
+                  <hr>
+                       <h2>Atributos</h2>
+         
+                    <div class="card-body align-items-center">
+                        <p>
+                            <h3>Força: {{registro.forca}}</h3>
+                            </p>
+                            <p>
+                            <h3>Destreza: {{registro.destreza}}</h3>
+                            </p>
+                            <p>
+                            <h3>Constituição: {{registro.constituicao}}</h3>
+                            </p>
+                            <p>
+                            <h3>Sabedoria: {{registro.sabedoria}}</h3>
+                            </p>
+                            <p>
+                            <h3>Inteligência: {{registro.inteligencia}}</h3>
+                            </p>
+                    </div>
+                  </div>
             </div>
+          </div>
+        </div>
+      </div>
+   
+     
+
+  </body>
+</html>
+
+<!-- 
+
+<div class="container px-2">
+    <div class="row gx-2">
+      <div class="col">
+<div class="card mb-3">
+    <img src="{{registro.imagem}}" class="card-img-top" style="width: 500px;" alt="Classe do personagem {{registro.classe}}"/>
+    <div class="card-body">
+        <h2>{{registro.nome}}</h2> <br>
+        <hr>
+        <p class="card-text">{{registro.bio}}</p>
+    </div>
+    <div class="card-footer">
+        <small class="text-center">{{registro.classe}}</small>
+    </div>
+</div>
+</div>
+<div class="container px-2">
+<div class="row gx-2">
+  <div class="col">
+<div class="card mb-3">
+<img src="{{registro.imagem}}" class="card-img-top" style="width: 500px;" alt="Classe do personagem {{registro.classe}}"/>
+<div class="card-body">
+    <h2>{{registro.nome}}</h2> <br>
+    <hr>
+    <p class="card-text">{{registro.bio}}</p>
+</div>
+<div class="card-footer">
+    <small class="text-center">{{registro.classe}}</small>
+</div>
+</div>
+</div>
+    </div>
+</div>
+    <div class="personagem">
+        <h2>{{registro.nome}}</h2> <br>
+        <h2>{{registro.classe}}</h2>
+       
+    </div>
+
+    <div class="atributos">
+        <h2>Atributos do Personagem</h2>
+        <div class="atributos valores">
+            <p>
+            <h3>Força: {{registro.forca}}</h3>
+            </p>
+            <p>
+            <h3>Destreza: {{registro.destreza}}</h3>
+            </p>
+            <p>
+            <h3>Constituição: {{registro.constituicao}}</h3>
+            </p>
+            <p>
+            <h3>Sabedoria: {{registro.sabedoria}}</h3>
+            </p>
+            <p>
+            <h3>Inteligência: {{registro.inteligencia}}</h3>
+            </p>
         </div>
     </div>
-    <div class="bio">
-        <h2>Biografia do Personagem.</h2>
-        <h4>{{registro.bio}}</h4>
-    </div>
-</body>
-
-</html>
+</div>
+<div class="bio">
+    <h2>Biografia do Personagem.</h2>
+    <h4>{{registro.bio}}</h4>
+</div> -->

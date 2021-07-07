@@ -86,3 +86,13 @@ body {
   color: white;
   text-shadow: 0 0 15px white;
 }
+
+
+#col1{
+  background-color: antiquewhite;
+  box-shadow: 0 0 15px;
+}
+
+#col2{
+  box-shadow: 0 0 15px;
+}
