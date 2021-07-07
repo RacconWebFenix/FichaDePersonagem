@@ -1,9 +1,10 @@
 const campoBusca = document.querySelector("#campoNome");
 const endereco = document.querySelector("#endereco");
+const tabela = document.querySelector("#testaCampo");
 
 function buscarNome() {
   let campoValor = campoBusca.value;
-  console.log(campoValor);
+
   if (!campoValor) {
     alert("O campo buscar está vazio");
     endereco.setAttribute("href", `/read`);

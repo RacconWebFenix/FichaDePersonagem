@@ -33,7 +33,7 @@ def readAll():
 def buscaNome(nome):
     registros = personagem.FichaPersonagem.buscaNome(nome)
     closeConn = db.session.close_all()
-    return render_template('readAll.html', registros=registros, closeConn = closeConn)
+    return render_template('readAll.html', registros=registros, closeConn = closeConn )
 
 
 @app.route('/read/<idRegistro>')

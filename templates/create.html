@@ -40,11 +40,6 @@
     {% else %}
     <div class="bloco">
       <form class="form" method="POST">
-        <div class="bloco">
-        <p>
-        <h2>Voce possui <span id="pontos">150</span> para distribuir em seus atributos</h2>
-        </p>
-      </div>
         <div class="campo">
           <div class="input-group mb-3">
             <span class="input-group-text" id="nomeLabel">Nome</span>
@@ -73,12 +68,13 @@
               <option value="1">Caçadora</option>
               <option value="2">Draconiano</option>
               <option value="3">Elfo</option>
-              <option value="4">Barbaro</option>
+              <option value="4">Cavaleiro</option>
               <option value="5">Mago</option>
-              <option value="6">Lycan</option>
-              <option value="7">Dracula</option>
-              <option value="8">Anjo</option>
-              <option value="9">Daemon</option>
+              <option value="6">Paladina</option>
+              <option value="7">Vampiro</option>
+              <option value="8">Arcanjo</option>
+              <option value="9">Demônio</option>
+              <option value="10">Clérigo</option>
             </select>
             <input
               type="text"
@@ -94,15 +90,7 @@
           <div class="row gx-5">
             <div class="col">
               <div class="p-3 border bg-light justify-content-center">
-                <div class="card" style="width: 18rem">
-                  <img
-                    src="../static/img/0.jpg"
-                    alt="Imagem da Classe"
-                    id="imagem"
-                    class="card-img-top"
-                    style="max-height: 360px; min-height: 360px"
-                  />
-                </div>
+                <img src="../static/img/0.jpg" id="imagem" class="rounded mx-auto d-block" width="360" alt="Imagem da Classe">
                 <input
                   type="text"
                   name="imagem"

@@ -8,11 +8,12 @@ body {
 }
 
 .header {
-  padding-top: 20px;
+  padding-top: 10px;
   background: #ffffff;
   background-image: url("/static/img/fundoCabecalho.jpg");
   background-position: center;
   box-shadow: 0 0 15px black;
+
 }
 
 #titulo {
@@ -75,4 +76,13 @@ body {
   color: white;
   text-shadow: 0 0 15px white;
   transition: all 0.5s;
+}
+
+#imagem{
+  box-shadow: 0 0 15px black;
+}
+
+#visualizar{
+  color: white;
+  text-shadow: 0 0 15px white;
 }

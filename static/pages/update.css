@@ -1,4 +1,10 @@
 .sucesso{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    height: 5rem;
     background-color: #d4edda;
     border-color: #c3e6cb;
     color: #155724;
@@ -6,3 +12,7 @@
     border-radius: 4px;
 }
 
+#titulo{
+    color: white;
+    text-shadow: 0 0 15px;
+}
