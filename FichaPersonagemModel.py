@@ -41,7 +41,7 @@ class FichaPersonagem(db.Model):
     @staticmethod
     def buscaNome(nome):
         # Select * from filmes order by id desc
-        return FichaPersonagem.query.filter(FichaPersonagem.nome.like(f'%{nome}%'))
+        return FichaPersonagem.query.filter(FichaPersonagem.nome.ilike(f'%{nome}%'))
 
 
     def save(self):
