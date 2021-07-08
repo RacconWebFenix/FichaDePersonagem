@@ -1,19 +1,18 @@
 from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy
 import FichaPersonagemModel
-from decouple import config
+
 app = Flask(__name__)
 
-
 # Conexão com Banco de Dados
-User = config(User)
-Password = config(Password)
-Host = config(Host)
-Database = config(Database)
-
+user = 'mpxnnhum'
+password = 'X_Q7OkzkpL_fIafb5mGD3QGH1Ut_VIMD'
+host = 'tuffi.db.elephantsql.com'
+database = 'mpxnnhum'
 app.config[
-    'SQLALCHEMY_DATABASE_URI'] = f'postgresql://{User}:{Password}@{Host}/{Database}'
+    'SQLALCHEMY_DATABASE_URI'] = f'postgresql://{user}:{password}@{host}/{database}'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
 db = SQLAlchemy(app)
 
 personagem = FichaPersonagemModel
@@ -28,13 +27,18 @@ def index():
 def readAll():
     registros = personagem.FichaPersonagem.readAll()
     closeConn = db.session.close_all()
-    return render_template('readAll.html', registros=registros, closeConn = closeConn)
+    return render_template('readAll.html',
+                           registros=registros,
+                           closeConn=closeConn)
+
 
 @app.route('/read/buscar/<nome>')
 def buscaNome(nome):
     registros = personagem.FichaPersonagem.buscaNome(nome)
     closeConn = db.session.close_all()
-    return render_template('readAll.html', registros=registros, closeConn = closeConn )
+    return render_template('readAll.html',
+                           registros=registros,
+                           closeConn=closeConn)
 
 
 @app.route('/read/<idRegistro>')
@@ -42,7 +46,9 @@ def readSingle(idRegistro):
     registro = personagem.FichaPersonagem.readSingle(idRegistro)
     closeConn = db.session.close_all()
     print(registro.nome)
-    return render_template('fichaCompleta.html', registro=registro, closeConn = closeConn)
+    return render_template('fichaCompleta.html',
+                           registro=registro,
+                           closeConn=closeConn)
 
 
 # CREATE
@@ -58,7 +64,9 @@ def create():
         registro.save()
         idAtribuido = registro.id
     closeConn = db.session.close_all()
-    return render_template('create.html', idAtribuido=idAtribuido, closeConn = closeConn)
+    return render_template('create.html',
+                           idAtribuido=idAtribuido,
+                           closeConn=closeConn)
 
 
 # UPDATE
@@ -84,7 +92,10 @@ def update(registroId):
 def delete(registroId):
     registro = personagem.FichaPersonagem.readSingle(registroId)
     closeConn = db.session.close_all()
-    return render_template('delete.html', registro = registro, closeConn = closeConn)
+    return render_template('delete.html',
+                           registro=registro,
+                           closeConn=closeConn)
+
 
 @app.route('/delete/<registroId>/confirmed')
 def deleteConfirmed(registroId):
@@ -93,7 +104,11 @@ def deleteConfirmed(registroId):
     if registro:
         registro.delete()
         sucesso = True
-    return render_template('delete.html', registro = registro, registroId = registroId, sucesso = sucesso)
+    return render_template('delete.html',
+                           registro=registro,
+                           registroId=registroId,
+                           sucesso=sucesso)
+
 
 if __name__ == '__main__':
     app.run(debug=True)
