@@ -10,7 +10,7 @@ body {
 .header {
   padding-top: 10px;
   background: #ffffff;
-  background-image: url("/static/img/fundoCabecalho.jpg");
+  background-image: url("../static/img/fundoCabecalho.jpg");
   background-position: center;
   box-shadow: 0 0 15px black;
 
@@ -95,4 +95,8 @@ body {
 
 #col2{
   box-shadow: 0 0 15px;
+}
+
+#imgShadow{
+  box-shadow: 0 0 15px black ;
 }
