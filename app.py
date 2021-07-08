@@ -1,14 +1,22 @@
 from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy
 import FichaPersonagemModel
+import os
+from os.path import join, dirname
+from dotenv import load_dotenv
+
+dotenv_path = join(dirname(__file__), '.env')
+load_dotenv(dotenv_path)
+
+user = os.environ.get("user")
+password = os.environ.get("password")
+host = os.environ.get("host")
+database = os.environ.get("database")
+
 
 app = Flask(__name__)
 
 # Conexão com Banco de Dados
-user = 'mpxnnhum'
-password = 'X_Q7OkzkpL_fIafb5mGD3QGH1Ut_VIMD'
-host = 'tuffi.db.elephantsql.com'
-database = 'mpxnnhum'
 app.config[
     'SQLALCHEMY_DATABASE_URI'] = f'postgresql://{user}:{password}@{host}/{database}'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
