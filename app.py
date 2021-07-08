@@ -1,18 +1,19 @@
 from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy
 import FichaPersonagemModel
+from decouple import config
 
 app = Flask(__name__)
 
 # Conexão com Banco de Dados
-user = 'mpxnnhum'
-password = 'X_Q7OkzkpL_fIafb5mGD3QGH1Ut_VIMD'
-host = 'tuffi.db.elephantsql.com'
-database = 'mpxnnhum'
-app.config[
-    'SQLALCHEMY_DATABASE_URI'] = f'postgresql://{user}:{password}@{host}/{database}'
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+User = config(User)
+Password = config(Password)
+Host = config(Host)
+Database = config(Database)
 
+app.config[
+    'SQLALCHEMY_DATABASE_URI'] = f'postgresql://{User}:{Password}@{Host}/{Database}'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
 personagem = FichaPersonagemModel

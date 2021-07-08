@@ -3,6 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 db = SQLAlchemy()
 
 
+
 #Quando Fdiferenciamos Maiusculas o sqlalchemy adota uma sintaxe separando as palavras com _ exemplo FichaPersonagem passa a ser em tempo de execução ficha_personagem
 class FichaPersonagem(db.Model):
     id = db.Column(db.Integer, primary_key=True)
