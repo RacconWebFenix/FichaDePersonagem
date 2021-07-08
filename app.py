@@ -2,14 +2,10 @@ from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy
 import FichaPersonagemModel
 from decouple import config
-
 app = Flask(__name__)
 
+
 # Conexão com Banco de Dados
-User = config(User)
-Password = config(Password)
-Host = config(Host)
-Database = config(Database)
 
 app.config[
     'SQLALCHEMY_DATABASE_URI'] = f'postgresql://{User}:{Password}@{Host}/{Database}'
