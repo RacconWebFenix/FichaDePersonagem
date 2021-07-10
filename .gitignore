@@ -148,3 +148,4 @@ dmypy.json
 cython_debug/
 
 .env
+testeRangeV2.html
